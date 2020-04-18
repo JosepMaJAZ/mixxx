@@ -6,7 +6,6 @@ XSBC-Original-Maintainer: RJ Ryan <rryan@mixxx.org>
 Build-Depends: debhelper (>= 4.0.0), 
                pkg-config, 
                docbook-to-man, 
-               xlibmesa-gl-dev, 
                libglu1-mesa-dev, 
                libqt4-opengl-dev | libqt4-dev (>= 4.6.0), 
                scons, 
@@ -30,7 +29,6 @@ Build-Depends: debhelper (>= 4.0.0),
                libusb-1.0-0-dev, 
                libchromaprint-dev, 
                librubberband-dev, 
-               libopus-dev, 
                libopusfile-dev, 
                libsqlite3-dev
 Standards-Version: 3.7.3
@@ -44,7 +42,6 @@ Depends: ${shlibs:Depends},
          libqt4-opengl, 
          libqt4-svg, 
          libqt4-xmlpatterns, 
-         libqt4-webkit, 
          libqt4-sql, 
          libqt4-sql-sqlite
 Recommends: libmp3lame0

@@ -302,12 +302,12 @@ SectionEnd
 
 Function un.onUninstSuccess
   HideWindow
-  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name) was successfully removed from your computer."
+  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name) was successfully removed from your computer." /SD IDOK
 FunctionEnd
 
 Function un.onInit
     !insertmacro MUI_UNGETLANGUAGE
-    MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "Are you sure you want to completely remove $(^Name) and all of its components?" IDYES +2
+    MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "Are you sure you want to completely remove $(^Name) and all of its components?" /SD IDYES IDYES +2
     Abort
     !insertmacro MULTIUSER_UNINIT
 FunctionEnd
@@ -363,9 +363,11 @@ Section "Uninstall"
   Delete "$INSTDIR\controllers\Behringer BCD2000.midi.xml"
   Delete "$INSTDIR\controllers\Behringer BCD3000 Advanced.midi.xml"
   Delete "$INSTDIR\controllers\Behringer BCD3000.midi.xml"
+  Delete "$INSTDIR\controllers\Behringer CMDStudio4a.midi.xml"
   Delete "$INSTDIR\controllers\Behringer-BCD2000-scripts.js"
   Delete "$INSTDIR\controllers\Behringer-BCD3000-Advanced-scripts.js"
   Delete "$INSTDIR\controllers\Behringer-BCD3000-scripts.js"
+  Delete "$INSTDIR\controllers\Behringer-CMDStudio4a-scripts.js"
   Delete "$INSTDIR\controllers\common-bulk-midi.js"
   Delete "$INSTDIR\controllers\common-controller-scripts.js"
   Delete "$INSTDIR\controllers\common-hid-devices.js"
@@ -504,7 +506,9 @@ Section "Uninstall"
   Delete "$INSTDIR\controllers\Reloop Digital Jockey 2 Controller Edition.midi.xml"
   Delete "$INSTDIR\controllers\Reloop Terminal Mix 2-4.js"
   Delete "$INSTDIR\controllers\Reloop Terminal Mix 2-4.midi.xml"
+  Delete "$INSTDIR\controllers\Reloop Jockey 3 ME.midi.xml"
   Delete "$INSTDIR\controllers\Reloop-Digital-Jockey2-Controller-scripts.js"
+  Delete "$INSTDIR\controllers\Reloop-Jockey-3-ME-scripts.js"
   Delete "$INSTDIR\controllers\Sony SixxAxis.hid.xml"
   Delete "$INSTDIR\controllers\Sony-SixxAxis.js"
   Delete "$INSTDIR\controllers\Stanton SCS.1d.midi.xml"
